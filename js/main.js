@@ -1,9 +1,10 @@
 $(document).ready(function(){
-    $('#container')
-        .find('.hot')
-        .children()
-        .first()    // or last()
-        .next()     //    prev()
+    $('#snow')
+        .parent()
+        .find('.title')
         .addClass('highlight');
+
+        console.log($('#snow').parents());
+        console.log($('#snow').closest('#container'));
 
 });
