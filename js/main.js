@@ -1,10 +1,6 @@
 $(document).ready(function(){
-    $('#snow')
-        .parent()
-        .find('.title')
-        .addClass('highlight');
-
-        console.log($('#snow').parents());
-        console.log($('#snow').closest('#container'));
+    $('.box').on('click', '.box-button', function(){
+        $(this).parent().toggleClass('highlight');
+    });
 
 });
