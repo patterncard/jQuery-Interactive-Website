@@ -26,10 +26,20 @@ $(document).ready(function(){
         // $(this).parent().find('.more-info').toggle();
         // $(this).parent().find('.more-info').fadeToggle('fast');
         $(this).parent().find('.more-info').slideToggle('fast');
+        
+        $(this)
+            .animate({ "opacity": 0.5,
+                "margin-left": 10 }, 'fast')
+            .animate({ "opacity": 1.0,
+                "margin-left": 0 }, 'fast');
 
     });
 
     $('#container').on('click', '.item-remove', function(){
         $(this).parent().remove();
     });
+
+    $.ajax('data/item.json', function(respone){
+        console.log(respone);
+    })
 });
