@@ -1,0 +1,18 @@
+{
+    "items": [{
+        "name": "Santa Monica",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus fugiat est, tenetur quidem facere cupiditate beatae ipsum maxime quos accusantium. Atque nobis iusto similique quia magni reiciendis nulla accusantium vero!",
+        "price": 499,
+        "moreInfo": "Lorem ipsum dolor sit amet"
+    }, {
+        "name": "Recife",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus fugiat est, tenetur quidem facere cupiditate beatae ipsum maxime quos accusantium. Atque nobis iusto similique quia magni reiciendis nulla accusantium vero!",
+        "price": 499,
+        "moreInfo": "Lorem ipsum dolor sit amet"
+    }, {
+        "name": "Long Beach",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus fugiat est, tenetur quidem facere cupiditate beatae ipsum maxime quos accusantium. Atque nobis iusto similique quia magni reiciendis nulla accusantium vero!",
+        "price": 499,
+        "moreInfo": "Lorem ipsum dolor sit amet"
+    }]
+}
