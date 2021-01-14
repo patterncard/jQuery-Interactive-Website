@@ -1,6 +1,8 @@
-function addItem(name, description, price, moreInfo) {
+let cart = 0;
+
+function addItem(id, name, description, price, moreInfo) {
     let html = '';
-        html += '<div class="item">';
+        html += '<div class="item" data-id="' + id + '">';
         html += '<div class="name">' + name + '</div>';
         html += '<img src="assets/pexels-luis-quintero-3689545.jpg" alt="image">';
         html += '<div class="description">' + description + '</div>';
@@ -8,8 +10,8 @@ function addItem(name, description, price, moreInfo) {
         html += '<button class="item-add">Add to cart</button>';
         html += '<button class="item-remove">Remove</button>';
         html += '<br>';
-        html += '<a class="more-info-link" href="#">' + moreInfo + '</a>';
-        html += '<div class="more-info">Lorem ipsum dolor sit</div>';
+        html += '<a class="more-info-link" href="#">More info</a>';
+        html += '<div class="more-info"> + moreInfo + </div>';
         html += '</div>';
 
         $('#container').prepend(html);
@@ -36,17 +38,41 @@ $(document).ready(function(){
         $(this).parent().remove();
     });
 
-    $.ajax('data/item.json')
+    $.ajax('data/item.json', {
+        dataType: 'json',
+        constentType: 'application/jason',
+        cache: false
+    })
         .done(function(response){
             let items = response.items;
             items.forEach(function(item) {
-                addItem(item.name, item.description, item.price, item.moreInfo);
+                addItem(item.id, item.name, item.description, item.price, item.moreInfo);
             });
         })
         .fail(function(request, errorType, errorMessage){
-            console.log(errorMessage);
         })
         .always(function(){
 
         })
+
+        $('#container').on('click', '.item-add', function(){
+            let id = $(this).parent().data('id');
+            console.log(id);
+            $.ajax('data/addToCart.json', {
+                type: 'post',
+                data: {id: id},
+                dataType:'json',
+                constentType: 'application/json'
+            })
+            .done(function(response) {
+                if (response.message +++ 'success') {
+                    let price = response.price;
+                    console.log(price);
+
+                    cart += price;
+
+                    $('#cart-container').text('$' + cart);
+                }
+            });
+        });
 });
