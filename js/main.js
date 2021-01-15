@@ -75,4 +75,16 @@ $(document).ready(function(){
                 }
             });
         });
+
+    $('#newsletter-checkbox').on('change', function(){
+        if($(this).is(':checked')) {
+        // $('#newsletter-frequency').show();
+        // $('#newsletter-frequency').slideIn();
+        $('#newsletter-frequency').fadeIn();
+        } else {
+        // $('#newsletter-frequency').hide();
+        // $('#newsletter-frequency').slideOut();
+        $('#newsletter-frequency').fadeOut();
+        }
+    });
 });
