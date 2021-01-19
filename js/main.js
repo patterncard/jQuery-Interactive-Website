@@ -87,4 +87,23 @@ $(document).ready(function(){
         $('#newsletter-frequency').fadeOut();
         }
     });
+
+    // works without this
+    // $('#newsletter-checkbox').trigger('change'); 
+
+    $('#cart-form').on('submit', function(event){
+        event.preventDefault();
+
+        let data = { form: $(this).serialize(), 
+            price: cart };
+
+        $.ajax($(this).attr('action'), {
+            type: 'post',
+            data: data
+        })
+        .done(function(response){
+            alert(response.message); 
+            // alert(data);
+        });
+    });
 });

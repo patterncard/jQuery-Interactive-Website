@@ -9,20 +9,24 @@
             $0
         </div>
         <div id="user-data">
-            <br>
-            <label>Name</label>
-            <input type="text">
-            <br>
-            <label>Email</label>
-            <input type="text">
-            <br>
-            <label>Newsletter?</label>
-            <input type="checkbox" id="newsletter-checkbox" checked>
-            <select id="newsletter-frequency">
-                <option>-</option>
-                <option selected>Weekly</option>
-                <option>Monthly</option>
-            </select>
+            <form id="cart-form" method="post" action="data/cartSubmit.json">
+                <br>
+                <label>Name</label>
+                <input type="text">
+                <br>
+                <label>Email</label>
+                <input type="text">
+                <br>
+                <label>Newsletter?</label>
+                <input type="checkbox" id="newsletter-checkbox" checked>
+                <select id="newsletter-frequency">
+                    <option>-</option>
+                    <option selected>Weekly</option>
+                    <option>Monthly</option>
+                </select>
+                <br>
+                <button id="submit-cart">Submit</button>
+            </form>
         </div>
         <div id="container">
             <br style="clear: left;" />
