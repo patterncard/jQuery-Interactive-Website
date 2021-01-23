@@ -95,15 +95,19 @@ $(document).ready(function(){
         event.preventDefault();
 
         let data = { form: $(this).serialize(), 
-            price: cart };
+        price: cart };
+
+        console.log(data.form);
 
         $.ajax($(this).attr('action'), {
             type: 'post',
             data: data
         })
         .done(function(response){
-            alert(response.message); 
-            // alert(data);
+            // console.log(response);
+            // alert(response.message); 
+            $('#feedback-message').text(response.message);
+            alert(data.form + ': ' + response.message);
         });
     });
 });
